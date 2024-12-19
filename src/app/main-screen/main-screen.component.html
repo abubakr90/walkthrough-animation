@@ -1,0 +1,31 @@
+<div class="main-container">
+    <div class="search-wrapper">
+        <div class="search-container" [class.highlight]="currentStep === 1"
+            [class.dimmed]="currentStep !== 1 && currentStep > 0">
+            <input type="text" placeholder="Search..." class="search-input">
+            <div *ngIf="currentStep === 1" class="tooltip">
+                Zooming on sample CONTROL 1
+            </div>
+        </div>
+    </div>
+
+    <div class="content-area"></div>
+    <div class="button-container">
+        <button class="action-button left-button" [class.highlight]="currentStep === 2"
+            [class.dimmed]="currentStep !== 2 && currentStep > 0">
+            Button 1
+            <div *ngIf="currentStep === 2" class="tooltip tooltip-btn">
+                Zooming on sample CONTROL 2 
+            </div>
+        </button>
+
+        <button class="action-button right-button" [class.highlight]="currentStep === 3"
+            [class.dimmed]="currentStep !== 3 && currentStep > 0">
+            Button 2
+            <div *ngIf="currentStep === 3" class="tooltip tooltip-btn">
+                Zooming on sample CONTROL 3
+            </div>
+        </button>
+    </div>
+    <div *ngIf="currentStep > 0" class="overlay-dimmed"></div>
+</div>

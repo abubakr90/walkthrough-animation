@@ -1,0 +1,174 @@
+.main-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f5f5f5;
+  position: relative;
+  overflow: hidden;
+}
+
+.search-wrapper {
+  padding: 1rem;
+  max-width: 100%;
+  position: relative;
+  z-index: 101;
+}
+
+.search-container {
+  position: relative;
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  /* transition: border-color 0.3s ease; */
+}
+
+.search-input:focus {
+  border-color: #3498db;
+}
+
+.content-area {
+  flex: 1;
+  margin: 1rem 0;
+}
+
+.button-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  z-index: 101;
+}
+
+.action-button {
+  /* padding: 1rem 2rem; */
+  border: none;
+  border-radius: 8px;
+  background: #3498db;
+  color: white;
+  cursor: pointer;
+  /* transition: all 0.3s ease; */
+  position: relative;
+}
+
+.left-button {
+  margin-right: auto;
+}
+
+.right-button {
+  margin-left: auto;
+}
+
+.action-button:hover {
+  background: #2980b9;
+}
+
+.tooltip-btn {
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 1rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .search-wrapper {
+    padding: 0.5rem;
+  }
+
+  .button-container {
+    padding: 1rem;
+  }
+
+  .action-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .tooltip {
+    white-space: normal;
+    max-width: 500px;
+  }
+}
+
+/* Walkthrough styles */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 100;
+}
+
+.highlight {
+  position: relative;
+  z-index: 102 !important;
+  animation: pulse 2s infinite;
+}
+
+.highlight.search-container {
+  background: white !important;
+}
+
+.highlight.action-button {
+  position: relative;
+  z-index: 102 !important;
+  background: #3498db !important;
+  color: white !important;
+  opacity: 1 !important;
+  box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.5);
+  pointer-events: auto !important;
+  visibility: visible !important;
+}
+
+.tooltip {
+  position: absolute;
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 103;
+  max-width: 500px;
+  color: #333;
+  margin:5px;
+  /* animation: fadeIn 0.3s ease; */
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(66, 153, 225, 0.7); }
+  70% { box-shadow: 0 0 0 15px rgba(66, 153, 225, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(66, 153, 225, 0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.dimmed {
+  opacity: 0.3;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.overlay-dimmed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  pointer-events: none; 
+}
