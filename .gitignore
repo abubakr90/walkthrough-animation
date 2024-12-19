@@ -1,3 +1,17 @@
-.angular
-dist
-node_modules
+# dependencies
+node_modules/
+
+# build output
+/dist/
+/out-tsc/
+
+/environment variables
+*.env
+
+# IDEs and editors
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
